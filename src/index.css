@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500&family=Poppins:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-poppins bg-offWhite text-gray-800;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-raspberry text-white rounded-full font-poppins 
+           transition-all duration-300 hover:bg-raspberry/90 hover:shadow-lg 
+           transform hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden 
+           transition-all duration-300 hover:shadow-xl;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-playfair font-medium text-raspberry mb-6;
+  }
+}
+
+.video-overlay {
+  background: linear-gradient(180deg, rgba(181, 51, 91, 0.1) 0%, rgba(181, 51, 91, 0.05) 100%);
+}
+
+.gold-border {
+  border-color: #D4AF37;
+}
