@@ -2,8 +2,9 @@
 title: L'Huile d'Argan - L'Or Liquide du Maroc pour Vos Cheveux
 date: 2024-02-15T14:00:00.000Z
 author: Khelti
-featuredImage: https://images.unsplash.com/photo-1617500603321-bcd6286973b7?auto=format&fit=crop&w=1200&q=80
-excerpt: Découvrez tous les bienfaits de l'huile d'argan, ce trésor marocain aux propriétés exceptionnelles pour les cheveux et la peau.
+featuredImage: /images/artisanal.jpg
+excerpt: Découvrez tous les bienfaits de l'huile d'argan, ce trésor marocain aux
+  propriétés exceptionnelles pour les cheveux et la peau.
 tags:
   - huile d'argan
   - ingrédients naturels
