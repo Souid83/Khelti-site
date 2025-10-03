@@ -2,27 +2,27 @@
 title: Les Meilleures Huiles Essentielles pour Sublimer Vos Cheveux
 date: 2024-01-20T10:00:00.000Z
 author: Khelti
-featuredImage: https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1200&q=80
-excerpt: Découvrez les huiles essentielles les plus efficaces pour nourrir, fortifier et embellir vos cheveux naturellement.
+featuredImage: /images/trois-bouteille-slides.jpg
+excerpt: Découvrez les huiles nigelle les plus efficaces pour nourrir, fortifier
+  et embellir vos cheveux naturellement.
 tags:
   - huiles essentielles
   - soins capillaires
   - beauté naturelle
   - recettes maison
 ---
-
-# Les Meilleures Huiles Essentielles pour Sublimer Vos Cheveux
+# Les Meilleures Huiles  pour Sublimer Vos Cheveux
 
 Les huiles essentielles sont de véritables trésors de la nature pour prendre soin de vos cheveux. Concentrées en actifs puissants, elles offrent des solutions naturelles et efficaces pour répondre à tous les besoins capillaires.
 
-## Pourquoi Utiliser des Huiles Essentielles ?
+## Pourquoi Utiliser des Huiles de nigelle ?
 
 Les huiles essentielles possèdent des propriétés exceptionnelles :
 
-- **Nourrissantes** : Elles pénètrent en profondeur la fibre capillaire
-- **Réparatrices** : Elles aident à reconstruire les cheveux abîmés
-- **Purifiantes** : Elles assainissent le cuir chevelu
-- **Stimulantes** : Elles favorisent la croissance des cheveux
+* **Nourrissantes** : Elles pénètrent en profondeur la fibre capillaire
+* **Réparatrices** : Elles aident à reconstruire les cheveux abîmés
+* **Purifiantes** : Elles assainissent le cuir chevelu
+* **Stimulantes** : Elles favorisent la croissance des cheveux
 
 ## Top 5 des Huiles Essentielles Indispensables
 
@@ -60,10 +60,10 @@ Idéale pour lutter contre la chute des cheveux et les pellicules. Elle fortifie
 
 ### Ingrédients
 
-- 30 ml d'huile de jojoba
-- 5 gouttes d'HE de lavande
-- 3 gouttes d'HE de romarin
-- 2 gouttes d'HE d'ylang-ylang
+* 30 ml d'huile de jojoba
+* 5 gouttes d'HE de lavande
+* 3 gouttes d'HE de romarin
+* 2 gouttes d'HE d'ylang-ylang
 
 ### Préparation
 
