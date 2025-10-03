@@ -43,19 +43,16 @@ collections:
   - name: "video_settings"
     label: "Paramètres Vidéo"
     files:
-      - name: "video_settings"
-  label: "Paramètres Vidéo"
-  files:
-    - name: "video_section"
-      label: "Vidéo Section (Haut de page)"
-      file: "public/data/video.json"
-      fields:
-        - { label: "Vidéo MP4", name: "videoUrl", widget: "file", media_library: { folder: "public/videos" }, hint: "Upload une vidéo MP4" }
-        - { label: "Vidéo WebM (optionnel)", name: "fallbackUrl", widget: "file", media_library: { folder: "public/videos" }, required: false }
-        - { label: "Image Poster", name: "poster", widget: "image", required: false }
-        - { label: "Lecture Automatique", name: "autoPlay", widget: "boolean", default: true }
-        - { label: "En Boucle", name: "loop", widget: "boolean", default: true }
-        - { label: "Muet par Défaut", name: "muted", widget: "boolean", default: true }
+      - name: "video_section"
+        label: "Vidéo Section (Haut de page)"
+        file: "public/data/video.json"
+        fields:
+          - { label: "Vidéo MP4", name: "videoUrl", widget: "file", media_library: { folder: "public/videos" }, hint: "Upload une vidéo MP4" }
+          - { label: "Vidéo WebM (optionnel)", name: "fallbackUrl", widget: "file", media_library: { folder: "public/videos" }, required: false }
+          - { label: "Image Poster", name: "poster", widget: "image", required: false }
+          - { label: "Lecture Automatique", name: "autoPlay", widget: "boolean", default: true }
+          - { label: "En Boucle", name: "loop", widget: "boolean", default: true }
+          - { label: "Muet par Défaut", name: "muted", widget: "boolean", default: true }
 
 
       - name: "video_hero"
