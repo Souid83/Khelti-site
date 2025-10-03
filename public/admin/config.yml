@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Souid83/Khelti-site   # ton repo GitHub
   branch: main
 
 media_folder: "public/images"
@@ -46,12 +47,13 @@ collections:
         label: "Vidéo Section (Haut de page)"
         file: "public/data/video.json"
         fields:
-          - { label: "URL de la Vidéo", name: "videoUrl", widget: "string", hint: "Chemin relatif (ex: /videos/site.mp4)" }
-          - { label: "URL Vidéo Alternative (WebM)", name: "fallbackUrl", widget: "string", required: false }
+          - { label: "Vidéo MP4", name: "videoUrl", widget: "file", media_library: { folder: "public/videos" }, hint: "Upload une vidéo MP4" }
+          - { label: "Vidéo WebM (optionnel)", name: "fallbackUrl", widget: "file", media_library: { folder: "public/videos" }, required: false }
           - { label: "Image Poster", name: "poster", widget: "image", required: false }
           - { label: "Lecture Automatique", name: "autoPlay", widget: "boolean", default: true }
           - { label: "En Boucle", name: "loop", widget: "boolean", default: true }
           - { label: "Muet par Défaut", name: "muted", widget: "boolean", default: true }
+
 
       - name: "video_hero"
         label: "Vidéo Hero (Produits)"
@@ -67,25 +69,28 @@ collections:
   - name: "products"
     label: "Produits"
     label_singular: "Produit"
-    file: "public/data/products.json"
-    fields:
-      - label: "Liste des Produits"
+    files:
+      - file: "public/data/products.json"
+        label: "Produits"
         name: "products"
-        widget: "list"
         fields:
-          - { label: "ID", name: "id", widget: "number" }
-          - { label: "Nom", name: "name", widget: "string" }
-          - { label: "Description", name: "description", widget: "text", required: false }
-          - { label: "Prix (€)", name: "price", widget: "string" }
-          - { label: "Image", name: "image", widget: "image" }
-          - label: "Catégorie"
-            name: "category"
-            widget: "select"
-            options: ["Huiles", "Sérums", "Soins", "Accessoires"]
-            default: "Huiles"
-          - { label: "Disponible", name: "available", widget: "boolean", default: true }
-          - { label: "Nouveau", name: "isNew", widget: "boolean", default: false, required: false }
-          - { label: "En Vedette", name: "featured", widget: "boolean", default: false, required: false }
+          - label: "Liste des Produits"
+            name: "products"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Nom", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Prix (€)", name: "price", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - label: "Catégorie"
+                name: "category"
+                widget: "select"
+                options: ["Huiles", "Sérums", "Soins", "Accessoires"]
+                default: "Huiles"
+              - { label: "Disponible", name: "available", widget: "boolean", default: true }
+              - { label: "Nouveau", name: "isNew", widget: "boolean", default: false, required: false }
+              - { label: "En Vedette", name: "featured", widget: "boolean", default: false, required: false }
 
   - name: "pages"
     label: "Pages"
