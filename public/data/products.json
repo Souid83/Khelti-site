@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Huile Nourrissante",
+      "description": "Une huile riche et nourrissante qui revitalise les cheveux en profondeur. Formulée avec des ingrédients naturels pour restaurer la brillance et la douceur.",
+      "price": "29.90",
+      "image": "https://images.unsplash.com/photo-1617500603321-bcd6286973b7?auto=format&fit=crop&w=800&q=80",
+      "category": "Huiles",
+      "available": true,
+      "isNew": false,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Sérum Réparateur",
+      "description": "Sérum ultra-concentré qui répare les cheveux abîmés et cassants. Enrichi en vitamines et huiles essentielles pour une réparation intensive.",
+      "price": "34.90",
+      "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80",
+      "category": "Sérums",
+      "available": true,
+      "isNew": true,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Huile Protectrice",
+      "description": "Protection optimale contre les agressions extérieures. Cette huile légère crée un bouclier protecteur tout en nourrissant vos cheveux.",
+      "price": "27.90",
+      "image": "https://images.unsplash.com/photo-1617500603321-bcd6286973b7?auto=format&fit=crop&w=800&q=80",
+      "category": "Huiles",
+      "available": true,
+      "isNew": false,
+      "featured": false
+    },
+    {
+      "id": 4,
+      "name": "Sérum Brillance",
+      "description": "Redonnez de l'éclat à vos cheveux avec ce sérum illuminateur. Formule légère qui ne graisse pas et apporte une brillance naturelle.",
+      "price": "32.90",
+      "image": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80",
+      "category": "Sérums",
+      "available": true,
+      "isNew": false,
+      "featured": true
+    }
+  ]
+}

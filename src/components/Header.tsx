@@ -1,7 +1,11 @@
 import React from 'react';
 import { Menu, ShoppingBag, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useSiteSettings } from '../hooks/useSiteSettings';
 
 export default function Header() {
+  const { settings, loading } = useSiteSettings();
+
   return (
     <header className="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -13,28 +17,34 @@ export default function Header() {
 
           {/* Logo */}
           <div className="flex-1 md:flex-none text-center md:text-left">
-            <h1 className="font-playfair text-2xl text-raspberry">
-              Cheveux Nature
-            </h1>
+            <Link to="/">
+              <h1 className="font-playfair text-2xl text-raspberry">
+                {loading ? 'Khelti – Soins artisanaux' : settings?.siteName}
+              </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8 flex-1 justify-center">
-            <a href="#" className="font-lora hover:text-raspberry transition-colors">
-              Accueil
-            </a>
-            <a href="#" className="font-lora hover:text-raspberry transition-colors">
-              Boutique
-            </a>
-            <a href="#" className="font-lora hover:text-raspberry transition-colors">
-              Recettes
-            </a>
-            <a href="#" className="font-lora hover:text-raspberry transition-colors">
-              À propos
-            </a>
-            <a href="#" className="font-lora hover:text-raspberry transition-colors">
-              Contact
-            </a>
+            {loading ? (
+              <>
+                <Link to="/" className="font-lora hover:text-raspberry transition-colors">Accueil</Link>
+                <Link to="/boutique" className="font-lora hover:text-raspberry transition-colors">Boutique</Link>
+                <Link to="/blog" className="font-lora hover:text-raspberry transition-colors">Recettes</Link>
+                <Link to="/a-propos" className="font-lora hover:text-raspberry transition-colors">À propos</Link>
+                <Link to="/contact" className="font-lora hover:text-raspberry transition-colors">Contact</Link>
+              </>
+            ) : (
+              settings?.navigation.map((item) => (
+                <Link
+                  key={item.url}
+                  to={item.url}
+                  className="font-lora hover:text-raspberry transition-colors"
+                >
+                  {item.title}
+                </Link>
+              ))
+            )}
           </nav>
 
           {/* Icons */}
