@@ -1,0 +1,36 @@
+{
+  "siteName": "Khelti – Soins artisanaux",
+  "logo": "",
+  "navigation": [
+    {
+      "title": "Accueil",
+      "url": "/"
+    },
+    {
+      "title": "Boutique",
+      "url": "/boutique"
+    },
+    {
+      "title": "Recettes",
+      "url": "/blog"
+    },
+    {
+      "title": "À propos",
+      "url": "/a-propos"
+    },
+    {
+      "title": "Contact",
+      "url": "/contact"
+    }
+  ],
+  "socialMedia": {
+    "facebook": "",
+    "instagram": "",
+    "twitter": ""
+  },
+  "footer": {
+    "copyright": "© 2024 Khelti – Soins artisanaux. Tous droits réservés.",
+    "email": "contact@khelti.fr",
+    "phone": "+33 1 23 45 67 89"
+  }
+}

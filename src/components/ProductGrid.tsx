@@ -1,33 +1,29 @@
 import React from 'react';
-
-const products = [
-  {
-    id: 1,
-    name: 'Huile Nourrissante',
-    price: '29.90',
-    image: 'https://images.unsplash.com/photo-1617500603321-bcd6286973b7?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    id: 2,
-    name: 'Sérum Réparateur',
-    price: '34.90',
-    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    id: 3,
-    name: 'Huile Protectrice',
-    price: '27.90',
-    image: 'https://images.unsplash.com/photo-1617500603321-bcd6286973b7?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    id: 4,
-    name: 'Sérum Brillance',
-    price: '32.90',
-    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80'
-  }
-];
+import { useProducts } from '../hooks/useProducts';
 
 export default function ProductGrid() {
+  const { products, loading, error } = useProducts();
+
+  if (loading) {
+    return (
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center py-12">
+          <p className="text-gray-600">Chargement des produits...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center py-12">
+          <p className="text-red-600">Erreur lors du chargement des produits.</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -1,0 +1,121 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+locale: fr
+
+collections:
+  - name: "site_settings"
+    label: "Paramètres du Site"
+    files:
+      - name: "general"
+        label: "Informations Générales"
+        file: "public/data/site-settings.json"
+        fields:
+          - { label: "Nom du Site", name: "siteName", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - label: "Navigation"
+            name: "navigation"
+            widget: "list"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Lien", name: "url", widget: "string" }
+          - label: "Réseaux Sociaux"
+            name: "socialMedia"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "Twitter", name: "twitter", widget: "string", required: false }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Texte de Copyright", name: "copyright", widget: "string" }
+              - { label: "Email", name: "email", widget: "string", required: false }
+              - { label: "Téléphone", name: "phone", widget: "string", required: false }
+
+  - name: "video_settings"
+    label: "Paramètres Vidéo"
+    files:
+      - name: "video_section"
+        label: "Vidéo Section (Haut de page)"
+        file: "public/data/video.json"
+        fields:
+          - { label: "URL de la Vidéo", name: "videoUrl", widget: "string", hint: "Chemin relatif (ex: /videos/site.mp4)" }
+          - { label: "URL Vidéo Alternative (WebM)", name: "fallbackUrl", widget: "string", required: false }
+          - { label: "Image Poster", name: "poster", widget: "image", required: false }
+          - { label: "Lecture Automatique", name: "autoPlay", widget: "boolean", default: true }
+          - { label: "En Boucle", name: "loop", widget: "boolean", default: true }
+          - { label: "Muet par Défaut", name: "muted", widget: "boolean", default: true }
+
+      - name: "video_hero"
+        label: "Vidéo Hero (Produits)"
+        file: "public/data/video-hero.json"
+        fields:
+          - { label: "URL de la Vidéo", name: "videoUrl", widget: "string" }
+          - { label: "Titre Principal", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "subtitle", widget: "string" }
+          - { label: "Texte du Bouton", name: "buttonText", widget: "string" }
+          - { label: "Lien du Bouton", name: "buttonUrl", widget: "string", default: "#shop" }
+          - { label: "Opacité Overlay (0-100)", name: "overlayOpacity", widget: "number", default: 20, min: 0, max: 100 }
+
+  - name: "products"
+    label: "Produits"
+    label_singular: "Produit"
+    file: "public/data/products.json"
+    fields:
+      - label: "Liste des Produits"
+        name: "products"
+        widget: "list"
+        fields:
+          - { label: "ID", name: "id", widget: "number" }
+          - { label: "Nom", name: "name", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Prix (€)", name: "price", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - label: "Catégorie"
+            name: "category"
+            widget: "select"
+            options: ["Huiles", "Sérums", "Soins", "Accessoires"]
+            default: "Huiles"
+          - { label: "Disponible", name: "available", widget: "boolean", default: true }
+          - { label: "Nouveau", name: "isNew", widget: "boolean", default: false, required: false }
+          - { label: "En Vedette", name: "featured", widget: "boolean", default: false, required: false }
+
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Date de Publication", name: "date", widget: "datetime" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Article"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date de Publication", name: "date", widget: "datetime" }
+      - { label: "Auteur", name: "author", widget: "string", default: "Khelti" }
+      - { label: "Image à la Une", name: "featuredImage", widget: "image", required: false }
+      - { label: "Extrait", name: "excerpt", widget: "text" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
