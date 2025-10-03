@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import MarkdownContent from '../components/MarkdownContent';
 import { getMarkdownContent, MarkdownPost } from '../utils/markdown';
 
 export default function MarkdownPage() {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug: slugParam } = useParams<{ slug: string }>();
+  const location = useLocation();
+
+  // Use pathname segment if no :slug param (supports static routes like /a-propos, /contact)
+  const effectiveSlug = slugParam ?? location.pathname.replace(/^\/+/, '').split('/')[0];
+
   const [post, setPost] = useState<MarkdownPost | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadContent = async () => {
-      if (!slug) return;
+      if (!effectiveSlug) {
+        setError('Page non trouvée');
+        setLoading(false);
+        return;
+      }
 
       try {
         setLoading(true);
-        const content = await getMarkdownContent(`/content/pages/${slug}.md`);
+        const content = await getMarkdownContent(`/content/pages/${effectiveSlug}.md`);
         if (content) {
           setPost(content);
           setError(null);
@@ -30,7 +39,7 @@ export default function MarkdownPage() {
     };
 
     loadContent();
-  }, [slug]);
+  }, [effectiveSlug]);
 
   if (loading) {
     return (
