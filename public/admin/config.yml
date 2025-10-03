@@ -66,28 +66,32 @@ collections:
           - { label: "Lien du Bouton", name: "buttonUrl", widget: "string", default: "#shop" }
           - { label: "Opacité Overlay (0-100)", name: "overlayOpacity", widget: "number", default: 20, min: 0, max: 100 }
 
-  - name: "products"
-    label: "Produits"
-    label_singular: "Produit"
-    file: "public/data/products.json"
-    fields:
-      - label: "Liste des Produits"
-        name: "products"
-        widget: "list"
-        fields:
-          - { label: "ID", name: "id", widget: "number" }
-          - { label: "Nom", name: "name", widget: "string" }
-          - { label: "Description", name: "description", widget: "text", required: false }
-          - { label: "Prix (€)", name: "price", widget: "string" }
-          - { label: "Image", name: "image", widget: "image" }
-          - label: "Catégorie"
-            name: "category"
-            widget: "select"
-            options: ["Huiles", "Sérums", "Soins", "Accessoires"]
-            default: "Huiles"
-          - { label: "Disponible", name: "available", widget: "boolean", default: true }
-          - { label: "Nouveau", name: "isNew", widget: "boolean", default: false, required: false }
-          - { label: "En Vedette", name: "featured", widget: "boolean", default: false, required: false }
+   - name: "products"
+  label: "Produits"
+  label_singular: "Produit"
+  files:
+    - file: "public/data/products.json"
+      label: "Produits"
+      name: "products"
+      fields:
+        - label: "Liste des Produits"
+          name: "products"
+          widget: "list"
+          fields:
+            - { label: "ID", name: "id", widget: "number" }
+            - { label: "Nom", name: "name", widget: "string" }
+            - { label: "Description", name: "description", widget: "text", required: false }
+            - { label: "Prix (€)", name: "price", widget: "string" }
+            - { label: "Image", name: "image", widget: "image" }
+            - label: "Catégorie"
+              name: "category"
+              widget: "select"
+              options: ["Huiles", "Sérums", "Soins", "Accessoires"]
+              default: "Huiles"
+            - { label: "Disponible", name: "available", widget: "boolean", default: true }
+            - { label: "Nouveau", name: "isNew", widget: "boolean", default: false, required: false }
+            - { label: "En Vedette", name: "featured", widget: "boolean", default: false, required: false }
+
 
   - name: "pages"
     label: "Pages"
